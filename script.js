@@ -1,15 +1,13 @@
-function mobile(){
-    const elemento = document.querySelector(".escolha-itens");
-    if (innerWidth <== 600px){
-        elemento.classList.add(mobile);
-    }
-}
+
+console.log("Olá")
 
 let prato;   // guardar informação do prato escolhido
 let valorprato; // guardar valor do prato escolhido
 
 function selecionarprato(element){
-    let isSelected = document.querySelector(".selected-prato"); // verifica se tem prato selecionado
+    let isSelected = document.querySelector(".selected-prato");
+    console.log(isSelected);
+     // verifica se tem prato selecionado
     if (isSelected !== null){                                 // condição para q se houver prato selecionado remova o atual
         isSelected.classList.remove("selected-prato");
     } else{
@@ -17,7 +15,9 @@ function selecionarprato(element){
     }
                     // por fim o element selecionado tem sua seleção
     // checkImg aparecer desaparecer
-    let isCheckOn = document.querySelector(".checkOnprato");  //vai ver se tem alguém que foi selecionado
+    let isCheckOn = document.querySelector(".checkOnprato");
+    console.log(isCheckOn);
+    //vai ver se tem alguém que foi selecionado
     if (isCheckOn !== null){                         // se tiver alguém selecionado remove a seleção e add o hidden nele
       isCheckOn.classList.remove("checkOnprato");
       isCheckOn.classList.add("escondido");
@@ -130,21 +130,6 @@ function selecionarsobremesa(element){
       document.querySelector(".finish-order").classList.remove("escondido");
     }
 }
-let totalValue = 0;
-function finishOrder(){
-  totalValue = valuePlate + valueDrink + valueDessert; // somar a conta do pedido
-  document.querySelector(".confirm-canva").classList.remove("hidden");
 
-  document.querySelector(".plate-selected").innerHTML = plate;
-  document.querySelector(".value-plate").innerHTML = valuePlate.toFixed(2);
-
-  document.querySelector(".drink-selected").innerHTML = drink;
-  document.querySelector(".value-drink").innerHTML = valueDrink.toFixed(2);
-
-  document.querySelector(".dessert-selected").innerHTML = dessert;
-  document.querySelector(".value-dessert").innerHTML = valueDessert.toFixed(2);
-
-  document.querySelector(".totalValue").innerHTML = totalValue.toFixed(2);
-}
 
 
