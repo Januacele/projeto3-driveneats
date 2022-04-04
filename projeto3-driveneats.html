@@ -23,7 +23,7 @@
 
 <body>
 
-     <!-- Mensagem Confirmação Pedido Escondida 
+     <!-- Mensagem Confirmação Pedido Escondida  -->
 
     <div class="confirm-pedido escondido">
         <div class="lista-final">
@@ -46,15 +46,15 @@
             
             <div>
                 <p><strong>TOTAL</strong></p>
-                <p class="valor-total"></p>
+                <p class="valorTotal"></p>
             </div>
 
             <div class="botao-opcoes">
                 <div class="botao-confirma" onclick="enviarPedido()"><strong>Tudo certo, pode pedir!</strong></div>
-                <div class="botao-cancela" onclick="calloffOrder()">Cancelar</div>
+                <div class="botao-cancela" onclick="ancelarPedido()">Cancelar</div>
             </div>
         </div>
-    </div>  -->
+    </div> 
 
 
  <!-- Topo -->
@@ -81,28 +81,34 @@
                         <img src="Imagens/frango_yin_yang.png">
                         <div class="nome-item">Frango Yin Yang</div>
                         <p class="conteudo-item">Um pouco de batata e salada</p>
-                        <div class="preco-item">R$ 14,90</div>
-                        <img class="checkImg escondido" src="/Imagens/Vector.png">
+                        <div class="preco-item">R$ 14,90
+                            <img class="checkImg escondido " src="/Imagens/Vector.svg">
+                        </div>
+                       
                     </div>
                 </div>
                 
-                <div class="lista-itens Macarronada"onclick="selecionarprato(this)">
-                    <div class="conteudo-corpo " >
+                <div class="lista-itens">
+                    <div class="conteudo-corpo Macarronada"onclick="selecionarprato(this)" >
                         <img src="Imagens/macarronada.jpg">
                         <div class="nome-item">Macarronada</div>
                         <p class="conteudo-item">Molho de tomate recheio de queijo </p>
-                        <div class="preco-item">R$ 16,90</div>
-                        <img class="checkImg escondido" src="/Imagens/Vector.png">
+                        <div class="preco-item">R$ 16,90
+                            <img class="checkImg escondido" src="/Imagens/Vector.svg">
+                        </div>
+                       
                     </div>
                 </div>
                 
-                <div class="lista-itens Lasanha" onclick="selecionarprato(this)">
-                    <div class="conteudo-corpo " >
+                <div class="lista-itens" >
+                    <div class="conteudo-corpo Lasanha" onclick="selecionarprato(this)" >
                         <img src="Imagens/lasanha.jpeg">
                         <div class="nome-item">Lasanha</div>
                         <p class="conteudo-item">Recheio de frango e 4 queijos</p>
-                        <div class="preco-item">R$ 12,90</div>
-                        <img class="checkImg escondido" src="/Imagens/Vector.png">
+                        <div class="preco-item">R$ 12,90
+                            <img class="checkImg escondido" src="/Imagens/Vector.svg">
+                        </div>
+                        
                     </div>
                 </div>
     
@@ -117,32 +123,38 @@
 
             <div class="escolha-itens">
 
-                <div class="lista-itens Coca" onclick="selecionarbebida(this)">
-                    <div class="conteudo-corpo">
+                <div class="lista-itens" >
+                    <div class="conteudo-corpo Coca" onclick="selecionarbebida(this)">
                         <img src="Imagens/coquinha_gelada.png">
                         <div class="nome-item">Coca </div>
                         <p class="conteudo-item">Lata 350ml</p>
-                        <div class="preco-item">R$ R$ 5,90</div>
-                        <img class="checkImg escondido" src="/Imagens/Vector.png">
+                        <div class="preco-item">R$ R$ 5,90
+                            <img class="checkImg escondido" src="/Imagens/Vector.svg">
+                        </div>
+                        
                     </div>
                 </div>
 
             
-                <div class="lista-itens Guarana" onclick="selecionarbebida(this)">
-                    <div class="conteudo-corpo">
+                <div class="lista-itens" >
+                    <div class="conteudo-corpo Guarana" onclick="selecionarbebida(this)">
                         <img src="Imagens/guarana.webp">
                         <div class="nome-item"> Guarana </div>
                         <p class="conteudo-item">Lata 350ml</p>
-                        <p class="preco-item">R$ R$ 4,90</p>
+                        <div class="preco-item">R$ R$ 4,90
+                            <img class="checkImg escondido" src="/Imagens/Vector.svg">
+                        </div>
                     </div>
                 </div>
            
-                <div class="lista-itens Fantinha" onclick="selecionarbebida(this)">
-                    <div class="conteudo-corpo">
+                <div class="lista-itens">
+                    <div class="conteudo-corpo Fantinha" onclick="selecionarbebida(this)">
                         <img src="Imagens/fantinha.webp">
                         <div class="nome-item">Fantinha </div>
                         <p class="conteudo-item">Lata 350ml</p>
-                        <div class="preco-item">R$ R$ 4,50</div>
+                        <div class="preco-item">R$ R$ 4,50
+                            <img class="checkImg escondido" src="/Imagens/Vector.svg">
+                        </div>
                     </div>
 
                 </div>
@@ -157,30 +169,36 @@
             <h3>Por fim, sua sobremesa</h3>
 
             <div class="escolha-itens">
-                <div class="lista-itens Pudim" onclick="selecionarsobremesa(this)">
-                    <div class="conteudo-corpo">
+                <div class="lista-itens">
+                    <div class="conteudo-corpo Pudim" onclick="selecionarsobremesa(this)">
                         <img src="Imagens/pudim.png">
                         <div class="nome-item">Pudim</div>
                         <p class="conteudo-item">Conteúdo 300 g</p>
-                        <div class="preco-item">R$ R$ 9,90</div>
+                        <div class="preco-item">R$ R$ 9,90
+                            <img class="checkImg escondido" src="/Imagens/Vector.svg">
+                        </div>
                      </div>
                 </div>
                 
-                <div class="lista-itens Torta" onclick="selecionarsobremesa(this)">
-                    <div class="conteudo-corpo">
+                <div class="lista-itens">
+                    <div class="conteudo-corpo Torta" onclick="selecionarsobremesa(this)">
                         <img src="Imagens/torta.jpg">
                         <div class="nome-item">Torta</div>
                         <p class="conteudo-item">Sabor Chocolate Fatia 70 g</p>
-                        <div class="preco-item">R$ R$ 5,10</div>
+                        <div class="preco-item">R$ R$ 5,10
+                            <img class="checkImg escondido" src="/Imagens/Vector.svg">
+                        </div>
                      </div>
                 </div>
                 
-                <div class="lista-itens Brownie" onclick="selecionarsobremesa(this)">
-                    <div class="conteudo-corpo">
+                <div class="lista-itens" >
+                    <div class="conteudo-corpo Brownie" onclick="selecionarsobremesa(this)">
                         <img src="Imagens/brownie.jpg">
                         <div class="nome-item">Brownie</div>
                         <p class="conteudo-item">Unidade 70 g - recheio de nutela</p>
-                        <div class="preco-item">R$ R$ 6,90</div>
+                        <div class="preco-item">R$ R$ 6,90
+                            <img class="checkImg escondido" src="/Imagens/Vector.svg">
+                        </div>
                      </div>
 
                 </div>
@@ -195,18 +213,22 @@
      <!-- Mensagem de Informação Final -->
 
         <div class="final">
-            <button class="informacao-final">
+            <div class="informacao-final">
                 <p>Selecione os 3 itens para fechar o pedido</p>
-            </button>
-
-            <button class="fechar-pedido">
+            </div>
+            
+            <div class="finish-order escondido" onclick="finishOrder()">
                 <p>Fechar Pedido</p>
-            </button>
+            </div>
+
         </div>
+
     </div>
+        
+                
+    
 
     <script src="script.js"></script>
 </body>
 
 </html>
-

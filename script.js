@@ -1,28 +1,24 @@
 
-console.log("Olá")
-
 let prato;   // guardar informação do prato escolhido
 let valorprato; // guardar valor do prato escolhido
 
 function selecionarprato(element){
     let isSelected = document.querySelector(".selected-prato");
-    console.log(isSelected);
      // verifica se tem prato selecionado
     if (isSelected !== null){                                 // condição para q se houver prato selecionado remova o atual
         isSelected.classList.remove("selected-prato");
-    } else{
-        element.classList.add("selected-prato");  
-    }
-                    // por fim o element selecionado tem sua seleção
+    } 
+    element.classList.add("selected-prato");  
+    
+                    //O elemento selecionado tem sua seleção
     // checkImg aparecer desaparecer
     let isCheckOn = document.querySelector(".checkOnprato");
-    console.log(isCheckOn);
     //vai ver se tem alguém que foi selecionado
-    if (isCheckOn !== null){                         // se tiver alguém selecionado remove a seleção e add o hidden nele
+    if (isCheckOn !== null){                         // se tiver alguém selecionado remove a seleção e add o escondido nele
       isCheckOn.classList.remove("checkOnprato");
       isCheckOn.classList.add("escondido");
     }
-    element.querySelector(".checkImg").classList.add("checkOnprato"); // o element atual recebe a seleção e remove o hidden
+    element.querySelector(".checkImg").classList.add("checkOnprato"); // o element atual recebe a seleção e remove o escondido
     element.querySelector(".checkImg").classList.remove("escondido");
     // checkImg aparecer desaparecer
     let isFrango = element.classList.contains("Frango");
@@ -44,7 +40,7 @@ function selecionarprato(element){
       valorprato = 0;
     }
     if(prato && sobremesa && bebida){
-      document.querySelector(".gray-button").classList.add("escondido");
+      document.querySelector(".informacao-final").classList.add("escondido");
       document.querySelector(".finish-order").classList.remove("escondido");
     }
 }
@@ -60,11 +56,11 @@ function selecionarbebida(element){
     element.classList.add("selected-bebida");
     // checkImg aparecer desaparecer
     let isCheckOn = document.querySelector(".checkOnbebida");  //vai ver se tem alguém que foi selecionado
-    if (isCheckOn !== null){                         // se tiver alguém selecionado remove a seleção e add o hidden nele
+    if (isCheckOn !== null){                         // se tiver alguém selecionado remove a seleção e add o escondido nele
       isCheckOn.classList.remove("checkOnbebida");
       isCheckOn.classList.add("escondido");
     }
-    element.querySelector(".checkImg").classList.add("checkOnbebida"); // o element atual recebe a seleção e remove o hidden
+    element.querySelector(".checkImg").classList.add("checkOnbebida"); // o element atual recebe a seleção e remove o escondido
     element.querySelector(".checkImg").classList.remove("escondido");
     // checkImg aparecer desaparecer
     let isCoca = element.classList.contains("Coca");
@@ -85,7 +81,7 @@ function selecionarbebida(element){
       valorbebida = 0;
     }
     if(prato && sobremesa && bebida){
-      document.querySelector(".gray-button").classList.add("escondido");
+      document.querySelector(".informacao-final").classList.add("escondido");
       document.querySelector(".finish-order").classList.remove("escondido");
     }
 }
@@ -101,11 +97,11 @@ function selecionarsobremesa(element){
     element.classList.add("selected-sobremesa");
     // checkImg aparecer desaparecer
     let isCheckOn = document.querySelector(".checkOnsobremesa");  //vai ver se tem alguém que foi selecionado
-    if (isCheckOn !== null){                         // se tiver alguém selecionado remove a seleção e add o hidden nele
+    if (isCheckOn !== null){                         // se tiver alguém selecionado remove a seleção e add o escondido nele
       isCheckOn.classList.remove("checkOnsobremesa");
       isCheckOn.classList.add("escondido");
     }
-    element.querySelector(".checkImg").classList.add("checkOnsobremesa"); // o element atual recebe a seleção e remove o hidden
+    element.querySelector(".checkImg").classList.add("checkOnsobremesa"); // o element atual recebe a seleção e remove o escondido
     element.querySelector(".checkImg").classList.remove("escondido");
     // checkImg aparecer desaparecer
     let isPudim = element.classList.contains("Pudim");
@@ -126,10 +122,39 @@ function selecionarsobremesa(element){
       valorsobremesa = 0;
     }
     if(prato && sobremesa && bebida){
-      document.querySelector(".gray-button").classList.add("escondido");
+      document.querySelector(".informacao-final").classList.add("escondido");
       document.querySelector(".finish-order").classList.remove("escondido");
     }
 }
 
+let valorTotal = 0;
+function finishOrder(){
+  valorTotal = valorprato + valorbebida + valorsobremesa; // somar a conta do pedido
+  document.querySelector(".confirm-pedido").classList.remove("escondido");
 
+  document.querySelector(".prato-selecionado").innerHTML = prato;
+  document.querySelector(".valor-prato").innerHTML = valorprato.toFixed(2);
+
+  document.querySelector(".bebida-selecionada").innerHTML = bebida;
+  document.querySelector(".valor-bebida").innerHTML = valorbebida.toFixed(2);
+
+  document.querySelector(".sobremesa-selecionada").innerHTML = sobremesa;
+  document.querySelector(".valor-sobremesa").innerHTML = valorsobremesa.toFixed(2);
+
+  document.querySelector(".valorTotal").innerHTML = valorTotal.toFixed(2);
+}
+
+function enviarPedido(){
+  let nome = prompt("Qual o seu nome?");
+  let endereco = prompt("Qual é o seu endereço?");
+  let pagamento = prompt("Forma de pagamento? (cartão, dinheiro ou pix)");
+
+  let messageWpp = "Olá, gostaria de fazer o pedido:" + "\n" + "- Prato: " + prato + "\n" + "- Bebida: " + bebida + "\n" + "- Sobremesa: " + sobremesa + "\n" + "Cliente: " + nome + "\n" + "Endereço: " + endereco + "\n" + "Forma de pagamento: " + pagamento + "\n" + "Total: " + valorTotal.toFixed(2) ;
+
+  window.open("https://wa.me/5587999225007?text=" + encodeURIComponent(messageWpp));
+}
+
+function cancelarPedido(){
+  document.querySelector(".confirm-pedido").classList.add("escondido");
+}
 
