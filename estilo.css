@@ -42,7 +42,7 @@ body{
     background-color: #E5E5E5;
 }
 
-.prato-principal{
+.prato{
     padding-top: 6.25em;
 }
 
@@ -70,7 +70,9 @@ body{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
-
+.lista-itens{
+    display: inline-flex;
+}
 .conteudo-corpo{
     font-family: 'Roboto', 'sans-serif';
     font-size: 0.9375em;  
@@ -86,7 +88,7 @@ body{
     box-shadow: 0px 0px 2px rgba(0,0,0,0.25);
 }
 
-.check{
+.checkImg{
     position: absolute;
     width: 1em;
     height: 1em;
@@ -230,6 +232,10 @@ body{
 
 
 /* Estilo js */
+.selected-prato, .selected-bebida, .selected-sobremesa{
+    border: 4px solid #32B72F;
+  
+}
 
 .finish-order{
     background-color: #32B72F;
@@ -238,7 +244,4 @@ body{
 }
 .escondido {
     display: none;
-}
-.selected-prato, .selected-bebida, .selected-sobremesa{
-    border: 4px solid #32B72F;
 }

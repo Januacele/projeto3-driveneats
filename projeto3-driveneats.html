@@ -70,39 +70,41 @@
 
     <div class="container">
 
-        <div class="prato-principal">
+        <div class="prato">
             
             <h3>Primeiro, seu prato</h3>
 
             <div class="escolha-itens">
-                <div class="lista-itens">
-                    <div class="conteudo-corpo Frango" onclick="selecionarprato(this)">
+
+                <div class="lista-itens" >
+                    <div class="conteudo-corpo Frango" onclick ="selecionarprato(this)">
                         <img src="Imagens/frango_yin_yang.png">
                         <div class="nome-item">Frango Yin Yang</div>
                         <p class="conteudo-item">Um pouco de batata e salada</p>
                         <div class="preco-item">R$ 14,90</div>
-                        <img class="check escondido" src="/Imagens/Vector.png">
+                        <img class="checkImg escondido" src="/Imagens/Vector.png">
                     </div>
                 </div>
                 
-                <div class="lista-itens">
-                    <div class="conteudo-corpo  Macarronada" onclick="selecionarprato(this)">
+                <div class="lista-itens Macarronada"onclick="selecionarprato(this)">
+                    <div class="conteudo-corpo " >
                         <img src="Imagens/macarronada.jpg">
                         <div class="nome-item">Macarronada</div>
                         <p class="conteudo-item">Molho de tomate recheio de queijo </p>
                         <div class="preco-item">R$ 16,90</div>
-                        <img class="check escondido" src="/Imagens/Vector.png">
+                        <img class="checkImg escondido" src="/Imagens/Vector.png">
                     </div>
                 </div>
                 
-                <div class="lista-itens">
-                    <div class="conteudo-corpo Lasanha" onclick="selecionarprato(this)">
+                <div class="lista-itens Lasanha" onclick="selecionarprato(this)">
+                    <div class="conteudo-corpo " >
                         <img src="Imagens/lasanha.jpeg">
                         <div class="nome-item">Lasanha</div>
                         <p class="conteudo-item">Recheio de frango e 4 queijos</p>
                         <div class="preco-item">R$ 12,90</div>
-                        <img class="check escondido" src="/Imagens/Vector.png">
+                        <img class="checkImg escondido" src="/Imagens/Vector.png">
                     </div>
+                </div>
     
             </div>
 
@@ -115,74 +117,92 @@
 
             <div class="escolha-itens">
 
-            <button class="conteudo-corpo" onclick="selecionar(this)">
-                <img src="Imagens/coquinha_gelada.png">
-                <p class="nome-item">Coca Geladinha</p>
-                <p class="conteudo-item">Lata 350ml</p>
-                <p class="preco-item">R$ R$ 5,90</p>
-            </button>
+                <div class="lista-itens Coca" onclick="selecionarbebida(this)">
+                    <div class="conteudo-corpo">
+                        <img src="Imagens/coquinha_gelada.png">
+                        <div class="nome-item">Coca </div>
+                        <p class="conteudo-item">Lata 350ml</p>
+                        <div class="preco-item">R$ R$ 5,90</div>
+                        <img class="checkImg escondido" src="/Imagens/Vector.png">
+                    </div>
+                </div>
 
-            <button class="conteudo-corpo" onclick="selecinar(this)">
-                <img src="Imagens/guarana.webp">
-                <p class="nome-item"> Guaraná Geladin </p>
-                <p class="conteudo-item">Lata 350ml</p>
-                <p class="preco-item">R$ R$ 4,90</p>
-            </button>
+            
+                <div class="lista-itens Guarana" onclick="selecionarbebida(this)">
+                    <div class="conteudo-corpo">
+                        <img src="Imagens/guarana.webp">
+                        <div class="nome-item"> Guarana </div>
+                        <p class="conteudo-item">Lata 350ml</p>
+                        <p class="preco-item">R$ R$ 4,90</p>
+                    </div>
+                </div>
+           
+                <div class="lista-itens Fantinha" onclick="selecionarbebida(this)">
+                    <div class="conteudo-corpo">
+                        <img src="Imagens/fantinha.webp">
+                        <div class="nome-item">Fantinha </div>
+                        <p class="conteudo-item">Lata 350ml</p>
+                        <div class="preco-item">R$ R$ 4,50</div>
+                    </div>
 
-            <button class="conteudo-corpo" onclick="selecionar(this)">
-                <img src="Imagens/fantinha.webp">
-                <p class="nome-item">Fantinha Laranja</p>
-                <p class="conteudo-item">Lata 350ml</p>
-                <p class="preco-item">R$ R$ 4,50</p>
-            </button>
+                </div>
 
-        </div>
-
-
+            </div>
+            
         </div>
         
+
         <div class="sobremesa">
 
             <h3>Por fim, sua sobremesa</h3>
 
             <div class="escolha-itens">
-                <button class="conteudo-corpo" onclick="selecionar(this)">
-                    <img src="Imagens/pudim.png">
-                    <p class="nome-item">Pudim</p>
-                    <p class="conteudo-item">Conteúdo 300 g</p>
-                    <p class="preco-item">R$ R$ 9,90</p>
-                 </button>
-    
-                <button class="conteudo-corpo" onclick="selecionar(this)">
-                    <img src="Imagens/torta.jpg">
-                    <p class="nome-item">Torta de Chocolate</p>
-                    <p class="conteudo-item">Fatia 70 g</p>
-                    <p class="preco-item">R$ R$ 5,10</p>
-                 </button>
-    
-                <button class="conteudo-corpo" onclick="selecionar(this)">
-                    <img src="Imagens/brownie.jpg">
-                    <p class="nome-item">Brownie</p>
-                    <p class="conteudo-item">Unidade 70 g - recheio de nutela</p>
-                    <p class="preco-item">R$ R$ 6,90</p>
-                 </button>
+                <div class="lista-itens Pudim" onclick="selecionarsobremesa(this)">
+                    <div class="conteudo-corpo">
+                        <img src="Imagens/pudim.png">
+                        <div class="nome-item">Pudim</div>
+                        <p class="conteudo-item">Conteúdo 300 g</p>
+                        <div class="preco-item">R$ R$ 9,90</div>
+                     </div>
+                </div>
+                
+                <div class="lista-itens Torta" onclick="selecionarsobremesa(this)">
+                    <div class="conteudo-corpo">
+                        <img src="Imagens/torta.jpg">
+                        <div class="nome-item">Torta</div>
+                        <p class="conteudo-item">Sabor Chocolate Fatia 70 g</p>
+                        <div class="preco-item">R$ R$ 5,10</div>
+                     </div>
+                </div>
+                
+                <div class="lista-itens Brownie" onclick="selecionarsobremesa(this)">
+                    <div class="conteudo-corpo">
+                        <img src="Imagens/brownie.jpg">
+                        <div class="nome-item">Brownie</div>
+                        <p class="conteudo-item">Unidade 70 g - recheio de nutela</p>
+                        <div class="preco-item">R$ R$ 6,90</div>
+                     </div>
+
+                </div>
+                
             </div>
 
         </div>
         
 
-    </div>
+    
 
      <!-- Mensagem de Informação Final -->
 
-     <div class="final">
-        <button class="informacao-final">
-            <p>Selecione os 3 itens para fechar o pedido</p>
-        </button>
+        <div class="final">
+            <button class="informacao-final">
+                <p>Selecione os 3 itens para fechar o pedido</p>
+            </button>
 
-        <button class="fechar-pedido">
-            <p>Fechar Pedido</p>
-        </button>
+            <button class="fechar-pedido">
+                <p>Fechar Pedido</p>
+            </button>
+        </div>
     </div>
 
 
