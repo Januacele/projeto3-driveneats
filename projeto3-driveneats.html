@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="estilo.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@800;900&display=swap" rel="stylesheet">
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@800;900&family=Righteous&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@800;900&family=Righteous&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 
     <title>projeto3-driveneats</title>
@@ -25,34 +25,29 @@
 
      <!-- Mensagem Confirmação Pedido Escondida  -->
 
-    <div class="confirm-pedido escondido">
-        <div class="lista-final">
+    <div class="confirmacao escondido">
+        <div class="confirmacao-detalhes">
             <h3><strong>Confirme seu pedido</strong></h3>
-
-            <div>
-                <p class="prato-selecionado"></p>
-                <p class="valor-prato"></p>
-            </div>
-            
-            <div>
-                <p class="bebida-selecionada"></p>
-                <p class="valor-bebida"></p>
-            </div>
-            
-            <div>
-                <p class="sobremesa-selecionada"></p>
-                <p class="valor-sobremesa"></p>
-            </div>
-            
-            <div>
-                <p><strong>TOTAL</strong></p>
-                <p class="valorTotal"></p>
-            </div>
-
-            <div class="botao-opcoes">
-                <div class="botao-confirma" onclick="enviarPedido()"><strong>Tudo certo, pode pedir!</strong></div>
-                <div class="botao-cancela" onclick="cancelarPedido()">Cancelar</div>
-            </div>
+            <ul>
+                <li>
+                    <div class="pratoEscolhido">nenhum</div>
+                    <div class="valorPrato">R$ 0.0</div>
+                </li>
+                <li>
+                    <div class="bebidaEscolhida">nenhum</div>
+                    <div class="valorBebida">R$ 0.0</div>
+                </li>
+                <li>
+                    <div class="sobremesaEscolhida">nenhum</div>
+                    <div class="valorSobremesa">R$ 0.0</div>
+                </li>
+                <li>
+                    <div class="total">TOTAL</div>
+                    <div class="valorTotal">R$ 0.0</div>
+                </li>
+                <button onclick = "enviarPedido()">Tudo certo, pode pedir!</button>
+                <p class="cancelar" onclick="cancelarPedido()" >Cancelar</p>
+            </ul>
         </div>
     </div> 
 
@@ -77,19 +72,19 @@
             <div class="escolha-itens">
 
                 <div class="lista-itens" >
-                    <div class="conteudo-corpo Frango" onclick ="selecionarprato(this)">
+                    <div class="produto" onclick ="selecionarprato(this, 'Frango Yin Yang', 14.90)">
                         <img src="Imagens/frango_yin_yang.png">
                         <div class="nome-item">Frango Yin Yang</div>
                         <p class="conteudo-item">Um pouco de batata e salada</p>
                         <div class="preco-item">R$ 14,90
-                            <img class="checkImg escondido " src="/Imagens/Vector.svg">
+                            <img class="checkImg escondido" src="/Imagens/Vector.svg">
                         </div>
                        
                     </div>
                 </div>
                 
                 <div class="lista-itens">
-                    <div class="conteudo-corpo Macarronada"onclick="selecionarprato(this)" >
+                    <div class="produto" onclick="selecionarprato(this, 'Macarronada', 16.90)" >
                         <img src="Imagens/macarronada.jpg">
                         <div class="nome-item">Macarronada</div>
                         <p class="conteudo-item">Molho de tomate recheio de queijo </p>
@@ -101,7 +96,7 @@
                 </div>
                 
                 <div class="lista-itens" >
-                    <div class="conteudo-corpo Lasanha" onclick="selecionarprato(this)" >
+                    <div class="produto" onclick="selecionarprato(this, 'Lasanha', 12.90)" >
                         <img src="Imagens/lasanha.jpeg">
                         <div class="nome-item">Lasanha</div>
                         <p class="conteudo-item">Recheio de frango e 4 queijos</p>
@@ -124,7 +119,7 @@
             <div class="escolha-itens">
 
                 <div class="lista-itens" >
-                    <div class="conteudo-corpo Coca" onclick="selecionarbebida(this)">
+                    <div class="produto" onclick="selecionarbebida(this, 'Coca 350ml', 5.90)">
                         <img src="Imagens/coquinha_gelada.png">
                         <div class="nome-item">Coca </div>
                         <p class="conteudo-item">Lata 350ml</p>
@@ -137,7 +132,7 @@
 
             
                 <div class="lista-itens" >
-                    <div class="conteudo-corpo Guarana" onclick="selecionarbebida(this)">
+                    <div class="produto" onclick="selecionarbebida(this, 'Guaraná 350ml', 4.90)">
                         <img src="Imagens/guarana.webp">
                         <div class="nome-item"> Guarana </div>
                         <p class="conteudo-item">Lata 350ml</p>
@@ -148,7 +143,7 @@
                 </div>
            
                 <div class="lista-itens">
-                    <div class="conteudo-corpo Fantinha" onclick="selecionarbebida(this)">
+                    <div class="produto" onclick="selecionarbebida(this, 'Fantinha 350ml', 4.50)">
                         <img src="Imagens/fantinha.webp">
                         <div class="nome-item">Fantinha </div>
                         <p class="conteudo-item">Lata 350ml</p>
@@ -170,7 +165,7 @@
 
             <div class="escolha-itens">
                 <div class="lista-itens">
-                    <div class="conteudo-corpo Pudim" onclick="selecionarsobremesa(this)">
+                    <div class="produto" onclick="selecionarsobremesa(this, 'Pudim', 9.90)">
                         <img src="Imagens/pudim.png">
                         <div class="nome-item">Pudim</div>
                         <p class="conteudo-item">Conteúdo 300 g</p>
@@ -181,7 +176,7 @@
                 </div>
                 
                 <div class="lista-itens">
-                    <div class="conteudo-corpo Torta" onclick="selecionarsobremesa(this)">
+                    <div class="produto" onclick="selecionarsobremesa(this, 'Torta', 5.10)">
                         <img src="Imagens/torta.jpg">
                         <div class="nome-item">Torta</div>
                         <p class="conteudo-item">Sabor Chocolate Fatia 70 g</p>
@@ -192,7 +187,7 @@
                 </div>
                 
                 <div class="lista-itens" >
-                    <div class="conteudo-corpo Brownie" onclick="selecionarsobremesa(this)">
+                    <div class="produto" onclick="selecionarsobremesa(this, 'Brownie', 6.90)">
                         <img src="Imagens/brownie.jpg">
                         <div class="nome-item">Brownie</div>
                         <p class="conteudo-item">Unidade 70 g - recheio de nutela</p>
@@ -207,28 +202,15 @@
 
         </div>
         
-
-    
-
-     <!-- Mensagem de Informação Final -->
-
-        <div class="final">
-            <div class="informacao-final">
-                <p>Selecione os 3 itens para fechar o pedido</p>
-            </div>
-            
-            <div class="finish-order escondido" onclick="finishOrder()">
-                <p>Fechar Pedido</p>
-            </div>
-
-        </div>
+        <footer>
+            <button onclick="revisarPedido()" disabled >Selecione os 3 itens<br>para fechar o pedido</br> </button>
+        </footer>
 
     </div>
         
                 
-    
-
     <script src="script.js"></script>
+    
 </body>
 
 </html>
