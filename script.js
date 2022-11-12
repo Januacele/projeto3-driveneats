@@ -86,7 +86,7 @@ function enviarPedido(){
 }
 
 function montarMensagemWhats(){
-  const numero = "5587999225007";
+  const numero = <></>;  // adcione um número aqui;
   const total = (pratoPreco + bebidaPreco + sobremesaPreco).toFixed(2);
 
   let mensagem = `Olá, gostaria de fazer o pedido:
