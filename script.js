@@ -1,160 +1,105 @@
+let prato = null;   
+let valorprato = null; 
+let bebida = null;   
+let valorbebida = null; 
+let sobremesa = null; 
+let valorsobremesa = null;
 
-let prato;   // guardar informação do prato escolhido
-let valorprato; // guardar valor do prato escolhido
+let contadorProdutos = 0;
 
-function selecionarprato(element){
-    let isSelected = document.querySelector(".selected-prato");
-     // verifica se tem prato selecionado
-    if (isSelected !== null){                                 // condição para q se houver prato selecionado remova o atual
-        isSelected.classList.remove("selected-prato");
-    } 
-    element.classList.add("selected-prato");  
-    
-                    //O elemento selecionado tem sua seleção
-    // checkImg aparecer desaparecer
-    let isCheckOn = document.querySelector(".checkOnprato");
-    //vai ver se tem alguém que foi selecionado
-    if (isCheckOn !== null){                         // se tiver alguém selecionado remove a seleção e add o escondido nele
-      isCheckOn.classList.remove("checkOnprato");
-      isCheckOn.classList.add("escondido");
-    }
-    element.querySelector(".checkImg").classList.add("checkOnprato"); // o element atual recebe a seleção e remove o escondido
-    element.querySelector(".checkImg").classList.remove("escondido");
-    // checkImg aparecer desaparecer
-    let isFrango = element.classList.contains("Frango");
-    let isMacarronada = element.classList.contains("Macarronada");
-    let isLasanha = element.classList.contains("Lasanha");
-   
+function selecionarprato(div, descricao, preco){
+  desmarcarProduto('prato'); 
 
-    if (isFrango === true){
-      prato = "Frango Ying Yang";
-      valorprato = 14.90;
-    } else if (isMacarronada === true){
-      prato = "Macarronada";
-      valorprato = 16.90;
-    } else if (isLasanha === true){
-      prato = "Lasanha";
-      valorprato = 12.90;
-    }else{
-      prato = "Vazio";
-      valorprato = 0;
-    }
-    if(prato && sobremesa && bebida){
-      document.querySelector(".informacao-final").classList.add("escondido");
-      document.querySelector(".finish-order").classList.remove("escondido");
-    }
+  //marcarProduto
+  div.classList.add("selecionado");
+  prato = descricao;
+  valorprato = preco;
+  contadorProdutos = contadorProdutos + 1;
+
+  liberarParaFecharPedido();
+
 }
 
-let bebida;   // guardar informação do prato escolhido
-let valorbebida; // guardar valor do prato escolhido
+function selecionarbebida(div, descricao, preco){
+  desmarcarProduto('bebida'); 
 
-function selecionarbebida(element){
-    let isSelected = document.querySelector(".selected-bebida"); //alternativa para não selecionar a mesma div da primeira lista é usar o seletor hierárquico
-    if (isSelected !== null){
-        isSelected.classList.remove("selected-bebida");
-    }
-    element.classList.add("selected-bebida");
-    // checkImg aparecer desaparecer
-    let isCheckOn = document.querySelector(".checkOnbebida");  //vai ver se tem alguém que foi selecionado
-    if (isCheckOn !== null){                         // se tiver alguém selecionado remove a seleção e add o escondido nele
-      isCheckOn.classList.remove("checkOnbebida");
-      isCheckOn.classList.add("escondido");
-    }
-    element.querySelector(".checkImg").classList.add("checkOnbebida"); // o element atual recebe a seleção e remove o escondido
-    element.querySelector(".checkImg").classList.remove("escondido");
-    // checkImg aparecer desaparecer
-    let isCoca = element.classList.contains("Coca");
-    let isGuarana = element.classList.contains("Guarana");
-    let isFantinha = element.classList.contains("Fantinha");
+  //marcarProduto
+  div.classList.add("selecionado");
+  bebida = descricao;
+  valorbebida = preco;
+  contadorProdutos = contadorProdutos + 1;
 
-    if (isCoca === true){
-      bebida = "Coca";
-      valorbebida = 5.90;
-    } else if (isGuarana === true){
-      bebida = "Guarana";
-      valorbebida = 4.90;
-    } else if (isFantinha === true){
-      bebida = "Fantinha";
-      valorbebida = 4.50;
-    } else{
-      bebida = "Vazio";
-      valorbebida = 0;
-    }
-    if(prato && sobremesa && bebida){
-      document.querySelector(".informacao-final").classList.add("escondido");
-      document.querySelector(".finish-order").classList.remove("escondido");
-    }
+  liberarParaFecharPedido();
+
 }
 
-let sobremesa; 
-let valorsobremesa; 
+function selecionarsobremesa(div, descricao, preco){
+  desmarcarProduto('sobremesa'); 
 
-function selecionarsobremesa(element){
-    let isSelected = document.querySelector(".selected-sobremesa");
-    if (isSelected !== null){
-        isSelected.classList.remove("selected-sobremesa");
-    }
-    element.classList.add("selected-sobremesa");
-    // checkImg aparecer desaparecer
-    let isCheckOn = document.querySelector(".checkOnsobremesa");  //vai ver se tem alguém que foi selecionado
-    if (isCheckOn !== null){                         // se tiver alguém selecionado remove a seleção e add o escondido nele
-      isCheckOn.classList.remove("checkOnsobremesa");
-      isCheckOn.classList.add("escondido");
-    }
-    element.querySelector(".checkImg").classList.add("checkOnsobremesa"); // o element atual recebe a seleção e remove o escondido
-    element.querySelector(".checkImg").classList.remove("escondido");
-    // checkImg aparecer desaparecer
-    let isPudim = element.classList.contains("Pudim");
-    let isTorta = element.classList.contains("Torta");
-    let isBrownie = element.classList.contains("Brownie");
+  //marcarProduto
+  div.classList.add("selecionado");
+  sobremesa = descricao;
+  valorsobremesa = preco;
+  contadorProdutos = contadorProdutos + 1;
 
-    if (isPudim === true){
-      sobremesa = "Pudim";
-      valorbremesa = 9.90;
-    } else if (isTorta === true){
-      sobremesa = "Torta";
-      valorsobremesa = 5.10;
-    } else if (isBrownie === true){
-      sobremesa = "Brownie";
-      valorsobremesa = 6.90;
-    } else{
-      sobremesa = "Vazio";
-      valorsobremesa = 0;
-    }
-    if(prato && sobremesa && bebida){
-      document.querySelector(".informacao-final").classList.add("escondido");
-      document.querySelector(".finish-order").classList.remove("escondido");
-    }
+  liberarParaFecharPedido();
+
 }
 
-let valorTotal = 0;
-function finishOrder(){
-  valorTotal = valorprato + valorbebida + valorsobremesa; // somar a conta do pedido
-  document.querySelector(".confirm-pedido").classList.remove("escondido");
+function desmarcarProduto(produto){
+  const produtoSelecionado = document.querySelector(`.${produto} .selecionado`);
+  if (produtoSelecionado !== null){
+    produtoSelecionado.classList.remove("selecionado");
+    contadorProdutos = contadorProdutos - 1;
+  }
+}
 
-  document.querySelector(".prato-selecionado").innerHTML = prato;
-  document.querySelector(".valor-prato").innerHTML = valorprato.toFixed(2);
+function liberarParaFecharPedido(){
+  const botao = document.querySelector("footer button");
+  if(contadorProdutos === 3) {
+    botao.disabled = false;
+    botao.innerHTML = "Fechar pedido";
+    botao.classList.add("liberado");
+  } else {
+    botao.disabled = true;
+    botao.innerHTML = "Selecione os 3 itens para fechar o pedido";
+    botao.classList.remove("liberado");
+  }
+}
 
-  document.querySelector(".bebida-selecionada").innerHTML = bebida;
-  document.querySelector(".valor-bebida").innerHTML = valorbebida.toFixed(2);
 
-  document.querySelector(".sobremesa-selecionada").innerHTML = sobremesa;
-  document.querySelector(".valor-sobremesa").innerHTML = valorsobremesa.toFixed(2);
+function revisarPedido(){
+  document.querySelector(".confirmacao").classList.remove("escondido");
 
-  document.querySelector(".valorTotal").innerHTML = valorTotal.toFixed(2);
+  document.querySelector(".pratoEscolhido").innerHTML = prato;
+  document.querySelector(".valorPrato").innerHTML = `R$ ${valorprato.toFixed(2)}`;
+  document.querySelector(".bebidaEscolhida").innerHTML = bebida;
+  document.querySelector(".valorBebida").innerHTML = `R$ ${valorbebida.toFixed(2)}`;
+  document.querySelector(".sobremesaEscolhida").innerHTML = sobremesa;
+  document.querySelector(".valorSobremesa").innerHTML = `R$ ${valorsobremesa.toFixed(2)}`;
+  document.querySelector(".valorTotal").innerHTML = `R$ ${(valorprato + valorbebida + valorsobremesa).toFixed(2)}`;
 }
 
 function enviarPedido(){
-  let nome = prompt("Qual o seu nome?");
-  let endereco = prompt("Qual é o seu endereço?");
-  let pagamento = prompt("Forma de pagamento? (cartão, dinheiro ou pix)");
+  window.open(montarMensagemWhats(), '_blank').focus();
 
-  let messageWpp = "Olá, gostaria de fazer o pedido:" + "\n" + "- Prato: " + prato + "\n" + "- Bebida: " + bebida + "\n" + "- Sobremesa: " + sobremesa + "\n" + "Cliente: " + nome + "\n" + "Endereço: " + endereco + "\n" + "Forma de pagamento: " + pagamento + "\n" + "Total: " + valorTotal.toFixed(2) ;
+}
 
-  window.open("https://wa.me/5587999225007?text=" + encodeURIComponent(messageWpp));
+function montarMensagemWhats(){
+  const numero = "5587999225007";
+  const total = (pratoPreco + bebidaPreco + sobremesaPreco).toFixed(2);
+
+  let mensagem = `Olá, gostaria de fazer o pedido:
+  - Prato: ${prato}
+  - Bebida: ${bebida}
+  - Sobremesa: ${sobremesa}
+  - Total: R$ ${total}
+  `
+  mensagem = encodeURIComponent(mensagem);
+  return `https://wa.me/${numero}?text=${mensagem}`;
 }
 
 function cancelarPedido(){
-  document.querySelector(".confirm-pedido").classList.add("escondido");
+  document.querySelector(".confirmacao").classList.add("escondido");
 }
 
